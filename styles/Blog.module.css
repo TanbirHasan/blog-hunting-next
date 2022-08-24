@@ -1,0 +1,15 @@
+
+
+.blog{
+    text-align: center;
+}
+
+.blogitem{
+    margin: auto;
+}
+
+.title{
+    font-weight: 600;
+   
+    cursor: pointer;
+}
