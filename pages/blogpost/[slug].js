@@ -1,23 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-const slug = () => {
+const Slug = (props) => {
   const router = useRouter();
-  const { slug } = router.query;
+  console.log(router.query.slug);
+
+  const [blog, setBlog] = useState(props.finaldata);
+
   return (
     <div className="dynamicblog">
       <div>
-        <h2>Title of the page is {slug}</h2>
+        <h2>Title of the page is {blog?.title}</h2>
         <hr />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequa
-        </p>
+        <p>{blog?.answer}</p>
       </div>
     </div>
   );
 };
 
-export default slug;
+export default Slug;
+
+export async function getServerSideProps(context) {
+  const { slug } = context.query;
+  let data = await fetch(`http://localhost:3000/api/getblog?slug=${slug}`);
+  let finaldata = await data.json();
+
+  return {
+    props: {
+      finaldata,
+    },
+  };
+}

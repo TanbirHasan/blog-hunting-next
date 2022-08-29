@@ -106,10 +106,17 @@
   margin-left: 0.5rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 576px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+  .homecontent{
+    display: flex;
+    flex-direction: column!important;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+   
   }
 }
 

@@ -1,15 +1,33 @@
 
 
-.blog{
-    text-align: center;
-}
 
 .blogitem{
-    margin: auto;
+   width: 50%;
+   margin: 20px auto;
+   padding: 20px;
+   border-radius: 24px;
+    background: #fafafa;
+    box-shadow:  12px 12px 24px #bebebe,
+                -12px -12px 24px #ffffff;
 }
 
 .title{
     font-weight: 600;
+
    
     cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    
+.blogitem{
+    width: 92%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 24px;
+     background: #fafafa;
+     box-shadow:  12px 12px 24px #bebebe,
+                 -12px -12px 24px #ffffff;
+ }
+
 }
